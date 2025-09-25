@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ListIcon, XIcon } from "@phosphor-icons/react";
+import { ListIcon, XIcon, InstagramLogoIcon } from "@phosphor-icons/react";
 import logo from "../imgs/icon-bookshare.png";
 
 const NavBar = () => {
@@ -34,7 +34,7 @@ const NavBar = () => {
         <div className="hover:cursor-pointer" onClick={handleLogoClick}>
           <img src={logo} alt="Logo" className="w-auto h-16 object-contain" />
         </div>
-        <ul className="hidden md:flex gap-8 text-black">
+        <ul className="hidden md:flex gap-8 text-black items-center justify-center">
           {navItems.map((item) => (
             <li
               key={item.path}
@@ -47,6 +47,15 @@ const NavBar = () => {
               <Link to={item.path}>{item.label}</Link>
             </li>
           ))}
+          <a
+            href="https://www.instagram.com/bookshare_fatecanas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 hover:text-marrom transition-colors duration-200"
+            aria-label="Instagram"
+          >
+            <InstagramLogoIcon size={28} weight="fill" />
+          </a>
         </ul>
 
         <button
@@ -64,20 +73,31 @@ const NavBar = () => {
             : "max-h-0 opacity-0 scale-y-0 overflow-hidden"
         }`}
       >
-        {navItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`hover:underline underline-offset-[5px] transition-all duration-300 ${
-              location.pathname === item.path
-                ? "opacity-100 underline"
-                : "opacity-50"
-            }`}
+        <div className="flex flex-col w-full items-center gap-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`hover:underline underline-offset-[5px] transition-all duration-300 ${
+                location.pathname === item.path
+                  ? "opacity-100 underline"
+                  : "opacity-50"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href="https://www.instagram.com/bookshare_fatecanas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-marrom transition-colors duration-200"
+            aria-label="Instagram"
           >
-            {item.label}
-          </Link>
-        ))}
+            <InstagramLogoIcon size={28} weight="fill" />
+          </a>
+        </div>
       </div>
     </header>
   );

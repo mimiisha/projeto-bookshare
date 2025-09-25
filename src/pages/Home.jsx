@@ -9,11 +9,11 @@ const Home = () => {
             Bookshare
           </h1>
           <p className="text-sm text-marromText md:text-lg leading-relaxed text">
-            Bem-vindo ao desconecta.ai, onde a tranquilidade encontra a
-            tecnologia. Inspirados pela natureza, criamos um refúgio digital
-            para te ajudar a desacelerar, encontrar clareza e nutrir seu
-            bem-estar. Descubra como uma desconexão consciente pode trazer mais
-            vida, leveza e significado para o seu dia a dia.
+            É um aplicativo de troca de livros que tem como propósito incentivar
+            o hábito da leitura, promover o consumo consciente e criar uma
+            comunidade unida entre leitores. A plataforma possibilita que os
+            usuários descubram novos títulos e se conectem com pessoas que
+            compartilham interesses literários semelhantes.
           </p>
         </div>
         <div className="flex justify-center md:justify-end md:mr-20 items-center">
